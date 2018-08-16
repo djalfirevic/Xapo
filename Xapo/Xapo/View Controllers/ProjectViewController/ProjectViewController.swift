@@ -19,6 +19,7 @@ class ProjectViewController: UIViewController {
     @IBOutlet weak var starsLabel: UILabel!
     @IBOutlet weak var forksLabel: UILabel!
     @IBOutlet weak var readmeWebView: WKWebView!
+    @IBOutlet weak var spinnerView: UIActivityIndicatorView!
     var projectViewModel: ProjectViewModel!
     
     // MARK: - View lifecycle
@@ -41,6 +42,7 @@ class ProjectViewController: UIViewController {
         starsLabel.text = projectViewModel.stars
         forksLabel.text = projectViewModel.forks
         
+        readmeWebView.navigationDelegate = self
         projectViewModel.fetchReadme {
             if let request = self.projectViewModel.readMeUrlRequest {
                 self.readmeWebView.load(request)
@@ -48,4 +50,13 @@ class ProjectViewController: UIViewController {
         }
     }
 
+}
+
+extension ProjectViewController: WKNavigationDelegate {
+    
+    // MARK: - WKNavigationDelegate
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        spinnerView.stopAnimating()
+    }
+    
 }

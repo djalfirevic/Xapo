@@ -166,12 +166,17 @@
                                             <wkPreferences key="preferences"/>
                                         </wkWebViewConfiguration>
                                     </wkWebView>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="OcT-lk-2ob">
+                                        <rect key="frame" x="177" y="202" width="20" height="20"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="4Oe-Q6-zyT" firstAttribute="leading" secondItem="tlP-X7-e0O" secondAttribute="leading" constant="8" id="1gw-1f-7nz"/>
+                                    <constraint firstItem="OcT-lk-2ob" firstAttribute="centerX" secondItem="gjT-yt-rHC" secondAttribute="centerX" id="ARY-Jd-mWO"/>
                                     <constraint firstAttribute="trailing" secondItem="gjT-yt-rHC" secondAttribute="trailing" constant="8" id="NMn-rr-9Tr"/>
                                     <constraint firstItem="gjT-yt-rHC" firstAttribute="top" secondItem="4Oe-Q6-zyT" secondAttribute="bottom" constant="8" id="ZU9-zP-HpA"/>
+                                    <constraint firstItem="OcT-lk-2ob" firstAttribute="centerY" secondItem="gjT-yt-rHC" secondAttribute="centerY" id="Zae-JN-yZx"/>
                                     <constraint firstAttribute="bottom" secondItem="gjT-yt-rHC" secondAttribute="bottom" constant="8" id="Zwp-td-ulg"/>
                                     <constraint firstItem="gjT-yt-rHC" firstAttribute="leading" secondItem="tlP-X7-e0O" secondAttribute="leading" constant="8" id="ga2-Ih-1L2"/>
                                     <constraint firstItem="4Oe-Q6-zyT" firstAttribute="top" secondItem="tlP-X7-e0O" secondAttribute="top" constant="40" id="uyd-pg-GPO"/>
@@ -244,6 +249,7 @@
                         <outlet property="forksLabel" destination="0aZ-fa-y3G" id="AOh-Ki-aKx"/>
                         <outlet property="infoContainerView" destination="xgW-4K-PtB" id="KKU-UW-arb"/>
                         <outlet property="readmeWebView" destination="gjT-yt-rHC" id="3Ba-kX-9vZ"/>
+                        <outlet property="spinnerView" destination="OcT-lk-2ob" id="Jd7-hD-7cw"/>
                         <outlet property="starsLabel" destination="MVC-PB-Cz3" id="lRq-Lh-gLv"/>
                         <outlet property="usernameLabel" destination="4pz-nN-PcH" id="Qre-VJ-7qY"/>
                     </connections>

@@ -21,6 +21,7 @@ class ProjectsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "Github Trends"
         tableView.rowHeight = UITableViewAutomaticDimension
         search(with: "swift")
     }
