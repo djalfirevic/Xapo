@@ -23,6 +23,8 @@ class ProjectsViewController: UIViewController {
         
         title = "Github Trends"
         tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.tableFooterView = UIView()
+        searchBar.becomeFirstResponder()
     }
     
     // MARK: - Private API

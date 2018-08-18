@@ -19,13 +19,18 @@ class ProjectsViewModel {
     // MARK: - Public API
     func fetchProjects(with term: String, _ completion: @escaping () -> ()) {
         let url = "\(apiUrl)\(term)\(query)"
+        Logger.log(message: "Fetching from: \(url)", type: .info)
         
         RESTManager.shared.decodableRequest(from: url, method: .get, parameters: nil) { [weak self] (response: TrendingProjectsResponse?) in
+            
             if let projects = response?.items {
-                Logger.log(message: "Fetching from: \(url)", type: .info)
-                Logger.log(message: "Found: \(projects.count) projects", type: .info)
+                Logger.log(message: "Found: \(projects.count) projects", type: .success)
                 
                 self?.projects = projects
+            } else {
+                Logger.log(message: "No '\(term)' projects found", type: .debug)
+                
+                self?.projects.removeAll()
             }
             
             completion()

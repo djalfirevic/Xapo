@@ -44,7 +44,7 @@ class ProjectViewController: UIViewController {
         
         readmeWebView.navigationDelegate = self
         projectViewModel.fetchReadme {
-            Logger.log(message: "Fetching readme...", type: .info)
+            Logger.log(message: "Fetching readme...", type: .debug)
             
             if let request = self.projectViewModel.readMeUrlRequest {
                 self.readmeWebView.load(request)
