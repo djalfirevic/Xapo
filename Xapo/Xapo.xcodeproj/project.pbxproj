@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF7C4441F4979C9C09C23481 /* Pods_Xapo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BE5AF56954DE92F686C29C3 /* Pods_Xapo.framework */; };
 		C42282622125BC9800366ECC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42282612125BC9800366ECC /* AppDelegate.swift */; };
 		C42282642125BC9800366ECC /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42282632125BC9800366ECC /* ProjectsViewController.swift */; };
 		C42282672125BC9800366ECC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C42282652125BC9800366ECC /* Main.storyboard */; };
@@ -29,6 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2BE5AF56954DE92F686C29C3 /* Pods_Xapo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Xapo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		92483B16475AD3E9478ABFEE /* Pods-Xapo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Xapo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Xapo/Pods-Xapo.debug.xcconfig"; sourceTree = "<group>"; };
 		C422825E2125BC9800366ECC /* Xapo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Xapo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C42282612125BC9800366ECC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C42282632125BC9800366ECC /* ProjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
@@ -50,6 +53,7 @@
 		C4ECD68B2125E59A00B7B816 /* ProjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewModel.swift; sourceTree = "<group>"; };
 		C4ECD68D2125E61700B7B816 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		C4ECD68F2125FF2E00B7B816 /* Readme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Readme.swift; sourceTree = "<group>"; };
+		C8382276B53533BBF3A1AA4A /* Pods-Xapo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Xapo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Xapo/Pods-Xapo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,18 +62,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4ECD67D2125C3A600B7B816 /* SystemConfiguration.framework in Frameworks */,
+				BF7C4441F4979C9C09C23481 /* Pods_Xapo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE75690C69D51C3C86103D92 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				92483B16475AD3E9478ABFEE /* Pods-Xapo.debug.xcconfig */,
+				C8382276B53533BBF3A1AA4A /* Pods-Xapo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		C42282552125BC9800366ECC = {
 			isa = PBXGroup;
 			children = (
 				C42282602125BC9800366ECC /* Xapo */,
 				C4ECD67B2125C3A600B7B816 /* Frameworks */,
 				C422825F2125BC9800366ECC /* Products */,
+				BE75690C69D51C3C86103D92 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -156,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				C4ECD67C2125C3A600B7B816 /* SystemConfiguration.framework */,
+				2BE5AF56954DE92F686C29C3 /* Pods_Xapo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -194,9 +210,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C42282702125BC9B00366ECC /* Build configuration list for PBXNativeTarget "Xapo" */;
 			buildPhases = (
+				7C7BC2548010BD494252E613 /* [CP] Check Pods Manifest.lock */,
 				C422825A2125BC9800366ECC /* Sources */,
 				C422825B2125BC9800366ECC /* Frameworks */,
 				C422825C2125BC9800366ECC /* Resources */,
+				F41175D604E897957511BE0C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -252,6 +270,49 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7C7BC2548010BD494252E613 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Xapo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F41175D604E897957511BE0C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Xapo/Pods-Xapo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactiveSwift/ReactiveSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Xapo/Pods-Xapo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C422825A2125BC9800366ECC /* Sources */ = {
@@ -414,6 +475,7 @@
 		};
 		C42282712125BC9B00366ECC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92483B16475AD3E9478ABFEE /* Pods-Xapo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -431,6 +493,7 @@
 		};
 		C42282722125BC9B00366ECC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C8382276B53533BBF3A1AA4A /* Pods-Xapo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

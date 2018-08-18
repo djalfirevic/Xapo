@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ReactiveCocoa
 
 class ProjectsViewController: UIViewController {
 
@@ -25,9 +26,19 @@ class ProjectsViewController: UIViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.tableFooterView = UIView()
         searchBar.becomeFirstResponder()
+        
+        configureSearchBar()
     }
     
     // MARK: - Private API
+    fileprivate func configureSearchBar() {
+        searchBar.reactive.continuousTextValues.observeValues { (text) in
+            if let term = text {
+                self.search(with: term)
+            }
+        }
+    }
+    
     fileprivate func search(with term: String) {
         projectsViewModel.fetchProjects(with: term) { [unowned self] in
             self.tableView.reloadData()
@@ -65,15 +76,6 @@ extension ProjectsViewController: UITableViewDataSource, UITableViewDelegate {
         if let project = projectsViewModel.project(at: indexPath) {
             showProject(project)
         }
-    }
-    
-}
-
-extension ProjectsViewController: UISearchBarDelegate {
-    
-    // MARK: - UISearchBarDelegate
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        search(with: searchText)
     }
     
 }
