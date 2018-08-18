@@ -23,13 +23,10 @@ class ProjectsViewController: UIViewController {
         
         title = "Github Trends"
         tableView.rowHeight = UITableViewAutomaticDimension
-        search(with: "swift")
     }
     
     // MARK: - Private API
     fileprivate func search(with term: String) {
-        self.tableView.reloadData()
-        
         projectsViewModel.fetchProjects(with: term) { [unowned self] in
             self.tableView.reloadData()
         }

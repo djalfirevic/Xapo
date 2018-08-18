@@ -13,14 +13,12 @@ class ProjectsViewModel {
     // MARK: - Properties
     var projects = [Project]()
     var projectsCount: Int {
-        return isSearching ? 0 : projects.count
+        return projects.count
     }
-    var isSearching = false
     
     // MARK: - Public API
     func fetchProjects(with term: String, _ completion: @escaping () -> ()) {
         let url = "\(apiUrl)\(term)\(query)"
-        isSearching = true
         
         RESTManager.shared.decodableRequest(from: url, method: .get, parameters: nil) { [weak self] (response: TrendingProjectsResponse?) in
             if let projects = response?.items {
@@ -28,7 +26,6 @@ class ProjectsViewModel {
                 Logger.log(message: "Found: \(projects.count) projects", type: .info)
                 
                 self?.projects = projects
-                self?.isSearching = false
             }
             
             completion()
@@ -36,7 +33,7 @@ class ProjectsViewModel {
     }
     
     func project(at indexPath: IndexPath) -> Project? {
-        guard indexPath.row <= projectsCount - 1, !isSearching else { return nil }
+        guard indexPath.row <= projectsCount - 1 else { return nil }
         
         return projects[indexPath.row]
     }
